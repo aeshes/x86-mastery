@@ -8,10 +8,10 @@ section '.data' data readable writeable
 
 section '.code' code executable readable
 start:
-  db 0B8h ; mov eax, 1
+  db 0BFh ; mov eax, 1
   dd 17   ; 32-bit integer 17
 
-  push eax
+  push edi
   push fmt
   call [printf]
   add esp, 8
