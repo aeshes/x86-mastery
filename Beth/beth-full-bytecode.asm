@@ -19,12 +19,14 @@ start:
   db 68h      ; push число
   dd fmt      ; непосредственно число
   call [printf]
-  add esp, 8
+  db 81h, 11000100b ; add esp, 8
+  dd 8
 
   db 68h   ; push число
   dd 2000  ; непосредственно число 2000
   call [Sleep]
-  add esp, 4
+  db 81h, 11000100b ; add esp, 4
+  dd 4
 
   invoke ExitProcess, 0
 
