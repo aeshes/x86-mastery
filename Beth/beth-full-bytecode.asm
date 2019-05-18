@@ -16,14 +16,14 @@ start:
   db 03h, 11000001b ; add eax, ecx
 
   db 50h      ; push eax
-  db 68h      ; push число
-  dd fmt      ; непосредственно число
+  db 68h      ; push integer
+  dd fmt      ; immediate constant
   call [printf]
   db 81h, 11000100b ; add esp, 8
   dd 8
 
-  db 68h   ; push число
-  dd 2000  ; непосредственно число 2000
+  db 68h   ; push integer
+  dd 2000  ; immediate integer 2000
   call [Sleep]
   db 81h, 11000100b ; add esp, 4
   dd 4
