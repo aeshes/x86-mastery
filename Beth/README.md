@@ -26,4 +26,6 @@ mov edi, 1
 
 ### ModR/M
 
-Байт `Mod-Reg-R/M` следует за опкодом и определяет операнды инструкции и режим адресации.
+Байт `Mod-Reg-R/M` следует за опкодом и определяет операнды инструкции и режим адресации. Структура ModRM-байта:
+
+![Mod-Reg-R/m](https://github.com/aeshes/x86-mastery/blob/master/Beth/img/mod_reg_r_m_byte.png)
