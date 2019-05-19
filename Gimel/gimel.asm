@@ -8,6 +8,8 @@ section '.data' data readable writeable
 
 section '.code' code executable readable
 start:
+  db 8Bh, 00000101b
+  dd fmt
   invoke ExitProcess, 0
 
 section '.idata' import readable writeable
