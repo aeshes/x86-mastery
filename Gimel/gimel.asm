@@ -30,6 +30,18 @@ start:
   db 03h, 10000011b ; 03h (Opcode)
                     ; 10(Mod)-000(Reg=EAX)-011(R/M=[EBX+offset])
   dd 100000h        ; 32-bit offset
+
+  ; --- SIB byte ---
+
+  ; mov ecx, [edi + esi*4]
+  ; Opcode ModR/M SIB
+  db 8Bh, 00001100b, 10110111b
+
+  ; mov eax, [esp]
+  ; 8Bh Opcode
+  ; 00(Mod)-000(Reg=EAX)-100(R/M=SIB)
+  ; SIB: 00(multiply by 1)-100(none)-100(ESP)
+  db 8Bh, 00000100b, 00100100b
   invoke ExitProcess, 0
 
 section '.idata' import readable writeable
